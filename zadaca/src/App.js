@@ -18,7 +18,9 @@ function App() {
       <Main>
         <Hero/>
         <Section title="Featured events">
-          <Grid columns={3}>
+
+          <Grid columns="3">
+
           <Event 
                         image={ImageDesign}
                         title="UX/UI design workshop"
