@@ -1,27 +1,38 @@
 import React from 'react';
 import './Header.scss';
-import Logo from '../../assets/images/logo.png';
+import LogoImage from '../../assets/images/logo.png';
+import { 
+    HeaderWrapper,
+    Inner,
+    Logo,
+    LogoContainer,
+    Nav,
+    NavItem,
+    Hamburger,
+    HamburgerLine 
+} from './HeaderStyle';
+
 
 const Header = () => {
     return (
-        <header className="Header">
-            <div className="Header-Inner">
-                <a href="index.html" className="Header-LogoContainer">
-                    <img src={Logo} className="Header-Logo" alt="FOI logo"/>
-                </a>
-                <div className="Header-NavHamburger">
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                    <div className="Header-NavHamburgerLine"></div>
-                </div>
-                <nav className="Header-Nav">
-                    <a href="index.html" className="Header-NavItem">Home</a>
-                    <a href="events.html" className="Header-NavItem">Events</a>
-                </nav>
-            </div>
-
-        </header>
+        <HeaderWrapper>
+            <Inner>
+                <LogoContainer to="/">
+                    <Logo src={LogoImage} alt="FOI logo"/>
+                </LogoContainer>
+                <Hamburger>
+                    <HamburgerLine/>
+                    <HamburgerLine/>
+                    <HamburgerLine/>
+                </Hamburger>
+                <Nav>
+                    <NavItem to="/" className="Header-NavItem">Home</NavItem>
+                    <NavItem to="/events" className="Header-NavItem">Events</NavItem>
+                </Nav>
+            </Inner>
+        </HeaderWrapper>
     );
 }
 
 export default Header;
+
