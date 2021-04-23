@@ -3,9 +3,9 @@ import Header from './components/Header/Header';
 import Main from './components/Main/Main';
 import Hero from './components/Hero/Hero';
 import Section from './components/Section/Section';
-import Grid from './components/Grid/Grid';
 import Event from './components/Event/Event';
 import Footer from './components/Footer/Footer';
+import { Grid } from '../src/lib/style/generalStyles';
 //images
 import ImageDesign from './assets/images/design.jpg';
 import ImageDevelopment from './assets/images/development.jpg';
@@ -18,7 +18,7 @@ function App() {
       <Main>
         <Hero/>
         <Section title="Featured events">
-          <Grid columns="3">
+          <Grid columns={3}>
           <Event 
                         image={ImageDesign}
                         title="UX/UI design workshop"
