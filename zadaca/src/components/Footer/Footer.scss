@@ -1,0 +1,19 @@
+@import 'src/theme';
+
+.Footer {
+  background-color: $black;
+  padding: 20px;
+
+  &-Text {
+    color: $lightGrey;
+    font-size: 12px;
+    text-align: center;
+  }
+  @media screen and ($tablet) {
+    padding: 30px;
+
+    &-Text {
+      font-size: 14px;
+    }
+  }
+}
