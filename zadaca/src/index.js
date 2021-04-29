@@ -1,14 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'
 
 ReactDOM.render(
-  <Router>
+  <BrowserRouter>
+    <ScrollToTop />
     <App />
-  </Router>,
-
+  </BrowserRouter>,
   document.getElementById('root')
 );
 

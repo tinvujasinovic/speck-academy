@@ -1,5 +1,11 @@
 import './App.scss';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import { Route } from 'react-router-dom';
+import Main from './components/Main/Main';
+import Home from './pages/Home/Home';
+import Events from './pages/Events/Events';
+import Event from './pages/Event/Event';
 import Main from './components/Main/Main';
 import Hero from './components/Hero/Hero';
 import Section from './components/Section/Section';
@@ -14,8 +20,11 @@ import ImageMarketing from './assets/images/marketing.jpg';
 function App() {
   return (
     <>
-      <Header/>
+      <Header />
       <Main>
+        <Route exact path="/" component={Home}/>
+        <Route path="/events" component={Events}/>
+        <Route path="/event" component={Event}/>
         <Hero/>
         <Section title="Featured events">
 
@@ -42,7 +51,7 @@ function App() {
             </Grid>
         </Section>
       </Main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

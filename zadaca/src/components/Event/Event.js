@@ -11,11 +11,11 @@ const Event = ({
     return (
         <div className="Event">
             <figure className="Event-Figure">
-                <img src={image} alt="Design" className="Event-Image"/>
+                <img src={image} alt="Design" className="Event-Image" />
             </figure>
             <h3 className="Event-Title">{title}</h3>
             <p className="Event-Description">{description}</p>
-            <Button text={buttonText}/>
+            <Button text={buttonText} />
         </div>
     );
 }
