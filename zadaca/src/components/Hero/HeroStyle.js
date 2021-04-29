@@ -3,17 +3,21 @@ import {
     colors,
     breakpoints
 } from '../../lib/style/theme';
+import img from '../../assets/images/hero.jpeg';
 
 export const HeroWrapper = styled.section`
-    background-image: url(../../assets/images/hero.jpeg);
+    background-image: url(${img});
     height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    margin-top: 80px;
 
     @media screen and (${breakpoints.desktopLarge}) {
         height: 500px;
     }
+
+    
 `;
 
 export const Overlay = styled.div`
@@ -50,8 +54,8 @@ export const Content = styled.div`
     }
 `;
 
-export const Heading = styled.div`
-    color: $yellow;
+export const Heading = styled.h2`
+    color: ${colors.yellow};
     line-height: 140%;
     margin-bottom: 30px;
     font-size: 20px;
@@ -71,10 +75,10 @@ export const Heading = styled.div`
     }
 `;
 
-export const Subheading = styled.div`
-     font-size: 14px;
+export const Subheading = styled.p`
+    font-size: 14px;
     font-weight: 400;
-    color: $white;
+    color: ${colors.white};
     line-height: 160%;
 
     @media screen and (${breakpoints.mobileLarge}) {
