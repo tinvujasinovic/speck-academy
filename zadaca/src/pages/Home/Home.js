@@ -1,8 +1,8 @@
 import React from 'react';
 import Hero from '../../components/Hero/Hero';
 import Section from '../../components/Section/Section';
-import Grid from '../../components/Grid/Grid';
 import Event from '../../components/Event/Event';
+import {Grid } from '../../lib/style/generalStyles';
 
 import ImageDesign from '../../assets/images/design.jpg';
 import ImageDevelopment from '../../assets/images/development.jpg';

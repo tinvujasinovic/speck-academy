@@ -1,145 +1,144 @@
-@import 'src/theme';
 
-.Section {
-  padding: 80px 0;
-  max-width: 1280px;
-  margin: 0 auto;
+// .Section {
+//   padding: 80px 0;
+//   max-width: 1280px;
+//   margin: 0 auto;
 
-  &-Title {
-    text-align: center;
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 40px;
-  }
+//   &-Title {
+//     text-align: center;
+//     font-size: 32px;
+//     font-weight: 600;
+//     margin-bottom: 40px;
+//   }
 
-  &-Events {
-    display: grid;
-    padding: 64px 15px;
-    row-gap: 48px;
-    margin-top: 40px;
-  }
+//   &-Events {
+//     display: grid;
+//     padding: 64px 15px;
+//     row-gap: 48px;
+//     margin-top: 40px;
+//   }
 
-  &-Event {
-    padding: 0 15px 65px;
-  }
-}
+//   &-Event {
+//     padding: 0 15px 65px;
+//   }
+// }
 
-.EventInfo {
-  &-Figure {
-    width: 100%;
-    height: 230px;
-    margin-bottom: 24px;
-  }
+// .EventInfo {
+//   &-Figure {
+//     width: 100%;
+//     height: 230px;
+//     margin-bottom: 24px;
+//   }
 
-  &-Image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
+//   &-Image {
+//     width: 100%;
+//     height: 100%;
+//     object-fit: cover;
+//   }
 
-  &-Content {
-    margin-bottom: 15px;
-  }
+//   &-Content {
+//     margin-bottom: 15px;
+//   }
 
-  &-ContentRow {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 16px;
-  }
+//   &-ContentRow {
+//     display: flex;
+//     justify-content: space-between;
+//     margin-bottom: 16px;
+//   }
 
-  &-Item:last-child {
-    text-align: right;
-  }
+//   &-Item:last-child {
+//     text-align: right;
+//   }
 
-  &-ItemTitle {
-    font-size: 14px;
-    margin-bottom: 4px;
-  }
+//   &-ItemTitle {
+//     font-size: 14px;
+//     margin-bottom: 4px;
+//   }
 
-  &-ItemValue {
-    font-size: 14px;
-  }
+//   &-ItemValue {
+//     font-size: 14px;
+//   }
 
-  &-Description {
-    font-size: 14px;
-    line-height: 150%;
-  }
-}
+//   &-Description {
+//     font-size: 14px;
+//     line-height: 150%;
+//   }
+// }
 
-@media screen and ($mobileLarge) {
-  .EventInfo-Figure {
-    height: 300px;
-  }
-}
+// @media screen and ($mobileLarge) {
+//   .EventInfo-Figure {
+//     height: 300px;
+//   }
+// }
 
-@media screen and ($tablet) {
-  .SectionEvent {
-    padding: 0 25px 65px;
-  }
-  .EventInfo {
-    display: flex;
-    justify-content: space-between;
-  }
-  .EventInfo-Figure {
-    height: 230px;
-    width: 400px;
-  }
-  .EventInfo-Content {
-    margin-bottom: 0;
-    width: 270px;
-  }
-  .EventInfo-ContentRow {
-    margin-bottom: 32px;
-  }
-  .EventInfo-ItemTitle {
-    font-size: 14px;
-    margin-bottom: 12px;
-  }
-  .EventInfo-Description {
-    width: 400px;
-  }
-}
+// @media screen and ($tablet) {
+//   .SectionEvent {
+//     padding: 0 25px 65px;
+//   }
+//   .EventInfo {
+//     display: flex;
+//     justify-content: space-between;
+//   }
+//   .EventInfo-Figure {
+//     height: 230px;
+//     width: 400px;
+//   }
+//   .EventInfo-Content {
+//     margin-bottom: 0;
+//     width: 270px;
+//   }
+//   .EventInfo-ContentRow {
+//     margin-bottom: 32px;
+//   }
+//   .EventInfo-ItemTitle {
+//     font-size: 14px;
+//     margin-bottom: 12px;
+//   }
+//   .EventInfo-Description {
+//     width: 400px;
+//   }
+// }
 
-@media screen and ($desktop) {
-  .SectionEvent {
-    margin: 0 auto;
-    padding: 0 0 64px;
-    max-width: 930px;
-  }
-  .EventInfo-Figure {
-    height: 350px;
-    width: 600px;
-  }
-  .EventInfo-Content {
-    width: 300px;
-  }
-  .EventInfo-ContentRow {
-    margin-bottom: 32px;
-  }
-  .EventInfo-ItemTitle {
-    font-size: 16px;
-  }
-  .EventInfo-ItemTitleValue {
-    font-size: 16px;
-  }
-  .EventInfo-Description {
-    width: 600px;
-    font-size: 16px;
-  }
-}
+// @media screen and ($desktop) {
+//   .SectionEvent {
+//     margin: 0 auto;
+//     padding: 0 0 64px;
+//     max-width: 930px;
+//   }
+//   .EventInfo-Figure {
+//     height: 350px;
+//     width: 600px;
+//   }
+//   .EventInfo-Content {
+//     width: 300px;
+//   }
+//   .EventInfo-ContentRow {
+//     margin-bottom: 32px;
+//   }
+//   .EventInfo-ItemTitle {
+//     font-size: 16px;
+//   }
+//   .EventInfo-ItemTitleValue {
+//     font-size: 16px;
+//   }
+//   .EventInfo-Description {
+//     width: 600px;
+//     font-size: 16px;
+//   }
+// }
 
-@media screen and ($desktopLarge) {
-  .SectionEvent {
-    max-width: 1280px;
-  }
-  .EventInfo-Figure {
-    height: 450px;
-    width: 800px;
-  }
-  .EventInfo-Content {
-    width: 400px;
-  }
-  .EventInfo-Description {
-    width: 800px;
-  }
-}
+// @media screen and ($desktopLarge) {
+//   .SectionEvent {
+//     max-width: 1280px;
+//   }
+//   .EventInfo-Figure {
+//     height: 450px;
+//     width: 800px;
+//   }
+//   .EventInfo-Content {
+//     width: 400px;
+//   }
+//   .EventInfo-Description {
+//     width: 800px;
+//   }
+// }

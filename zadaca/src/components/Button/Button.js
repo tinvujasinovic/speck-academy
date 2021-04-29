@@ -1,6 +1,7 @@
 import React from 'react';
-import './Button.scss';
 import { useHistory } from 'react-router-dom';
+
+import { ButtonWrapper } from './ButtonStyle';
 
 const Button = ({
     text
@@ -13,9 +14,9 @@ const Button = ({
     }
 
     return (
-        <button className="Button" type="button" onClick={redirect}>
+        <ButtonWrapper type="button" onClick={redirect}>
             {text}
-        </button>
+        </ButtonWrapper>
     );
 }
 export default Button;

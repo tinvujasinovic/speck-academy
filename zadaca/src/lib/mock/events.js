@@ -1,17 +1,3 @@
-Copy of events.js
-Danas
-16:59
-
-Korisnik Borna Grilec dodao je stavku u mape
-Mapa Google diska
-Resources
-JavaScript
-Copy of events.js
-16:59
-
-Korisnik Borna Grilec izradio je stavku
-JavaScript
-Copy of events.js
 import ImageDesign from '../../assets/images/design.jpg';
 import ImageDevelopment from '../../assets/images/development.jpg';
 import ImageMarketing from '../../assets/images/marketing.jpg';

@@ -1,5 +1,5 @@
 import React from 'react';
-import './Header.scss';
+
 import LogoImage from '../../assets/images/logo.png';
 import { 
     HeaderWrapper,
@@ -26,8 +26,8 @@ const Header = () => {
                     <HamburgerLine/>
                 </Hamburger>
                 <Nav>
-                    <NavItem to="/" className="Header-NavItem">Home</NavItem>
-                    <NavItem to="/events" className="Header-NavItem">Events</NavItem>
+                    <NavItem exact to="/">Home</NavItem>
+                    <NavItem exact to="/events">Events</NavItem>
                 </Nav>
             </Inner>
         </HeaderWrapper>

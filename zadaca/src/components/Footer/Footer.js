@@ -1,13 +1,11 @@
 import React from 'react';
-import './Footer.scss';
+import { Text, FooterWrapper } from './FooterStyle';
 
 const Footer = () => {
     return ( 
-        <footer className="Footer">
-            <div>
-                <p className= "Footer-Text">Copyright &copy; 2021 Speck Academy</p>
-            </div>
-        </footer>
+        <FooterWrapper>
+            <Text>Copyright &copy; 2021 Speck Academy</Text>
+        </FooterWrapper>
      );
 }
  

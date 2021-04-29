@@ -1,12 +1,12 @@
 import styled from 'styled-components';
 
-import { 
+import {
     colors,
     breakpoints,
     transitionEase
 } from '../../lib/style/theme';
 
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const HeaderWrapper = styled.header`
     background-color: ${colors.white};
@@ -63,9 +63,12 @@ export const Nav = styled.nav`
 `;
 
 export const NavItem = styled(NavLink)`
+    &.active {
+        color: ${colors.red}
+    }
+    
     &:hover {
-        color: ${colors.red
-        }
+        color: ${colors.red}
     }
 
     &:last-child {
