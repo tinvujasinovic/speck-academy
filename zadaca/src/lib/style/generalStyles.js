@@ -30,3 +30,7 @@ export const Grid = styled.div`
         }
     }
 `;
+
+export const Main = styled.main`
+
+`;
