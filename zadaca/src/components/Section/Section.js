@@ -6,9 +6,9 @@ const Section = ({
     title,
     withoutTopPadding
 }) => {
-    const sectionClassName = withoutTopPadding ? 'Section Section_topPadding_none' : 'Section';
+    
     return (
-        <SectionWrapper>
+        <SectionWrapper withoutTopPadding={withoutTopPadding}>
             {title && <Title>{ title }</Title>}
             { children }
         </SectionWrapper>

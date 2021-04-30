@@ -12,7 +12,7 @@ const Home = () => {
     return (
         <main>
             <Hero />
-            <Section title="Featured events">
+            <Section title="Featured events" withoutTopPadding={true}>
                 <Grid columns="3">
                     <Event
                         image={ImageDesign}
