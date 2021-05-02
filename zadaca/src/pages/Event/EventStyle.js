@@ -1,10 +1,11 @@
 import styled from 'styled-components';
+import Section from '../../components/Section/Section';
 import {
     colors,
     breakpoints
 } from '../../lib/style/theme';
 
-export const SectionEventsWrapper = styled.section`
+export const SectionEventsWrapper = styled(Section)`
     background-color: ${colors.black};
     padding: 20px;
 
