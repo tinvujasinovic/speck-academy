@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../Button/Button';
-import { EventInfoWrapper, Figure, Image, Content, Row, Item, Title, Value } from './EventInfoStyle';
+import { EventInfoWrapper, Figure, Image, Content, Row, Item, Value } from './EventInfoStyle';
 
 const EventInfo = () => {
     return (
@@ -11,21 +11,21 @@ const EventInfo = () => {
             <Content>
                 <Row>
                     <Item>
-                        <Title>Lokacija</Title>
+                        <h3>Lokacija</h3>
                         <Value></Value>
                     </Item>
                     <Item>
-                        <Title>Datum i vrijeme</Title>
+                        <h3>Datum i vrijeme</h3>
                         <Value></Value>
                     </Item>
                 </Row>
                 <Row>
                     <Item>
-                        <Title>Slobodna mjesta</Title>
+                        <h3>Slobodna mjesta</h3>
                         <Value></Value>
                     </Item>
                     <Item>
-                        <Title>Firma</Title>
+                        <h3>Firma</h3>
                         <Value></Value>
                     </Item>
                 </Row>
