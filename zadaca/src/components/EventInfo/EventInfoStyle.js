@@ -44,12 +44,16 @@ export const Image = styled.img`
 export const Content = styled.div`
     margin-bottom: 15px;
 
-    @media screen and (${breakpoints.tablet}) {
+    @media screen and (${breakpoints.desktop}) {
         margin-bottom: 0;
-        width: 400px;
+        width: 270px;
     }
 
     @media screen and (${breakpoints.desktop}) {
+        width: 300px;
+    }
+
+    @media screen and (${breakpoints.desktopLarge}) {
         width: 400px;
     }
 `;
@@ -65,25 +69,25 @@ export const Row = styled.div`
 
     @media screen and (${breakpoints.desktop}) {
         margin-bottom: 32px;
-    font-size: 16px;
     }
 `;
 
-export const Item = styled.div` 
-    &:last-item{
-        text-align: right;
+export const Item = styled.div`
+    font-size: 14px;
+    margin-bottom: 4px;
+
+    @media screen and (${breakpoints.tablet}) {
+        font-size: 14px;
+        margin-bottom: 12px;
     }
+
     @media screen and (${breakpoints.desktop}) {
-    font-size: 16px;
+        font-size: 16px;
     }
-`;
-
-
-export const Title = styled.div` 
-    text-align: right;
-    font-weight: bold;
 `;
 
 export const Value = styled.div` 
-    text-align: right;
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
 `;
