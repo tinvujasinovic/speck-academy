@@ -30,9 +30,6 @@ export const Row = styled.div`
     justify-content: space-between;
     margin-bottom: 16px;
 
-    &:last-child {
-        margin-bottom: 0;
-    }
 `;
 
 export const Item = styled.div`

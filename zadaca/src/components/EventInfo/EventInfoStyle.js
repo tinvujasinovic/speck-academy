@@ -26,7 +26,7 @@ export const Figure = styled.figure`
 
     @media screen and (${breakpoints.desktop}) {
         height: 350px;
-        width: 500px;
+        width: 600px;
     }
 
     @media screen and (${breakpoints.desktopLarge}) {
@@ -42,11 +42,13 @@ export const Image = styled.img`
 `;
 
 export const Content = styled.div`
-    margin-bottom: 15px;
+    &:first-child {
+        margin-bottom: 20px;
+    }
 
-    @media screen and (${breakpoints.desktop}) {
+    @media screen and (${breakpoints.tablet}) {
         margin-bottom: 0;
-        width: 270px;
+        width: 300px;
     }
 
     @media screen and (${breakpoints.desktop}) {
@@ -68,7 +70,7 @@ export const Row = styled.div`
     }
 
     @media screen and (${breakpoints.desktop}) {
-        margin-bottom: 32px;
+        margin-bottom: 20px;
     }
 `;
 
@@ -78,7 +80,7 @@ export const Item = styled.div`
 
     @media screen and (${breakpoints.tablet}) {
         font-size: 14px;
-        margin-bottom: 12px;
+        margin-bottom: 8px;
     }
 
     @media screen and (${breakpoints.desktop}) {
@@ -86,8 +88,32 @@ export const Item = styled.div`
     }
 `;
 
-export const Value = styled.div` 
+export const Title = styled.h3`
+    margin-bottom: 8px;
+`;
+
+export const Value = styled.p` 
     @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+`;
+
+export const Description = styled.p`
+    font-size: 14px;
+    line-height: 150%;
+    padding: 20px 0;
+
+    @media screen and (${breakpoints.tablet}) {
+        width: 100%;
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        width: 100%;
+        font-size: 16px;    
+    }
+
+    @media screen and (${breakpoints.desktopLarge}) {
+        width: 800px;
         font-size: 16px;
     }
 `;
