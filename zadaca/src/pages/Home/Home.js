@@ -1,38 +1,45 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Hero from '../../components/Hero/Hero';
 import Section from '../../components/Section/Section';
 import Event from '../../components/Event/Event';
-import {Grid } from '../../lib/style/generalStyles';
-
-import ImageDesign from '../../assets/images/design.jpg';
-import ImageDevelopment from '../../assets/images/development.jpg';
-import ImageMarketing from '../../assets/images/marketing.jpg';
+import { Grid } from '../../lib/style/generalStyles';
+import allEvents from '../../lib/mock/events';
+import Load from '../../components/Load/Load';
 
 const Home = () => {
+    const [events, setEvents] = useState([]);
+
+
+    useEffect(() => {
+        let eventsList = [];
+        setTimeout(() => {
+            eventsList = allEvents.map((event, index) => {
+                return event.isFeatured ? <Event
+                    key={index}
+                    id={event.id}
+                    image={event.imageUrl}
+                    imageAlt={event.imageAlt}
+                    title={event.title}
+                    description={event.shortDescription}
+                    buttonText='Find out more'
+                /> : null
+            });
+
+            setEvents(eventsList);
+        }, 1000);
+
+        return ()=>{};
+    }, []);
     return (
         <main>
             <Hero />
             <Section title="Featured events" withoutTopPadding={true}>
-                <Grid columns="3">
-                    <Event
-                        image={ImageDesign}
-                        title="UX/UI design workshop"
-                        description="Learn how to solve big problems and test new ideas based on Google Sprint methodology..."
-                        buttonText="Find out more"
-                    />
-                    <Event
-                        image={ImageDevelopment}
-                        title="Frontend best practices"
-                        description="Best frontend practices for developers. Learn advanced CSS techniques and much more..."
-                        buttonText="Find out more"
-                    />
-                    <Event
-                        image={ImageMarketing}
-                        title="Digital marketing workshop"
-                        description="Lear how to use Google Ads and social networks to gain customers for your digital product..."
-                        buttonText="Find out more"
-                    />
-                </Grid>
+                {events.length > 0 ?
+                    <Grid columns={3}>
+                        {events}
+                    </Grid>
+                    : <Load />
+                }
             </Section>
         </main>
     );

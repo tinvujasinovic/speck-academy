@@ -3,7 +3,9 @@ import Button from '../Button/Button';
 import { EventWrapper, Figure, Image, Title, Description } from './EventStyle';
 
 const Event = ({
+    id,
     image,
+    imageAlt,
     title,
     description,
     buttonText
@@ -11,11 +13,11 @@ const Event = ({
     return (
         <EventWrapper>
             <Figure>
-                <Image src={image} alt="Design" />
+                <Image src={image} alt={imageAlt} />
             </Figure>
             <Title>{title}</Title>
             <Description>{description}</Description>
-            <Button text={buttonText} />
+            <Button text={buttonText} id={id}/>
         </EventWrapper>
     );
 }

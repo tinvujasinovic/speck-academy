@@ -3,19 +3,18 @@ import { useHistory } from 'react-router-dom';
 
 import { ButtonWrapper } from './ButtonStyle';
 
-const Button = ({
-    text
-}) => {
-
+const Button = (
+    props
+) => {
     const history = useHistory();
 
     const redirect = () => {
-        history.push('/event')
+        history.push(`/event/${props.id}`)
     }
 
     return (
         <ButtonWrapper type="button" onClick={redirect}>
-            {text}
+            {props.text}
         </ButtonWrapper>
     );
 }

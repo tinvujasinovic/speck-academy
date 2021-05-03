@@ -72,6 +72,7 @@ export const Row = styled.div`
     @media screen and (${breakpoints.desktop}) {
         margin-bottom: 20px;
     }
+  
 `;
 
 export const Item = styled.div`
@@ -86,13 +87,23 @@ export const Item = styled.div`
     @media screen and (${breakpoints.desktop}) {
         font-size: 16px;
     }
+    
+    &:first-child h3{
+        text-align: left;
+    }
+          
+    &:first-child p{
+        text-align: left;
+    }
 `;
 
 export const Title = styled.h3`
+    text-align: right;
     margin-bottom: 8px;
 `;
 
 export const Value = styled.p` 
+    text-align: right;
     @media screen and (${breakpoints.desktop}) {
         font-size: 16px;
     }

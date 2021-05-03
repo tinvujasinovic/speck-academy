@@ -12,43 +12,39 @@ import {
     Description
 } from './EventInfoStyle';
 
-const EventInfo = () => {
+const EventInfo = (props) => {
     return (
         <>
             <EventInfoWrapper>
                 <Figure>
-                    <Image src={require("../../assets/images/design.jpg").default} alt="Design" />
+                    <Image src={props.imageUrl} alt={props.imageAlt} />
                 </Figure>
                 <Content>
                     <Row>
                         <Item>
                             <Title>Lokacija</Title>
-                            <Value>Hodnik FOI-a</Value>
+                            <Value>{props.location}</Value>
                         </Item>
                         <Item>
                             <Title>Datum i vrijeme</Title>
-                            <Value>14.10. (9:00-16:00h)</Value>
+                            <Value>{props.time}</Value>
                         </Item>
                     </Row>
                     <Row>
                         <Item>
                             <Title>Slobodna mjesta</Title>
-                            <Value>15/60</Value>
+                            <Value>{props.availability}</Value>
                         </Item>
                         <Item>
                             <Title>Firma</Title>
-                            <Value>Speck</Value>
+                            <Value>{props.company}</Value>
                         </Item>
                     </Row>
                     <Button text='Prijavi se' />
                 </Content>
             </EventInfoWrapper>
             <Description>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sint laborum quibusdam quisquam, fugiat
-                cumque dignissimos quasi. Corrupti dignissimos commodi ad sint aliquam. Ipsum doloremque, eum commodi
-                dolor voluptatibus blanditiis? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nobis
-                reiciendis error animi quae dolorum officiis suscipit iusto quos facere temporibus libero a, labore
-                nihil ipsa necessitatibus debitis quibusdam? Optio, dolor?
+                {props.description}
             </Description>
         </>
     );

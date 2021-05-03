@@ -20,5 +20,5 @@ export const Text = styled.footer`
 
     @media screen and (${breakpoints.tablet}) {
         font-size: 14px;
-  }
+    }
 `;
