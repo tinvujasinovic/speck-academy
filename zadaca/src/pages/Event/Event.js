@@ -1,17 +1,14 @@
 import React from 'react';
+import EventInfo from '../../components/EventInfo/EventInfo';
+import Section from '../../components/Section/Section';
+
 import './Event.scss';
 
 const Event = () => {
     return (
-        <>
-        <section className="Section SectionEvents">
-            <h1 className="Section-Title">UX/UI design workshop</h1>
-        </section>
-        <section className="SectionEvent">
-            <div className="EventInfo">
-                <figure className="EventInfo-Figure">
-                    <img src={require("../../assets/images/design.jpg").default} alt="Design" className="EventInfo-Image"/>
-                </figure>
+        <Section title={'UX/UI design workshop'}>
+            <EventInfo>
+             
                 <div className="EventInfo-Content">
                     <div className="EventInfo-ContentRow">
                         <div className="EventInfo-ItemTitle">
@@ -33,9 +30,8 @@ const Event = () => {
                             <p className="EventInfo-ItemTitleValue">Speck</p>
                         </div>
                     </div>
-                    <button className="Button">Prijavi se</button>
                 </div>
-            </div>
+            </EventInfo>
             <p className="EventInfo-Description">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque sint laborum quibusdam quisquam, fugiat
                 cumque dignissimos quasi. Corrupti dignissimos commodi ad sint aliquam. Ipsum doloremque, eum commodi
@@ -43,8 +39,7 @@ const Event = () => {
                 reiciendis error animi quae dolorum officiis suscipit iusto quos facere temporibus libero a, labore
                 nihil ipsa necessitatibus debitis quibusdam? Optio, dolor?
             </p>
-        </section>
-    </>
+        </Section>
     );
 }
 

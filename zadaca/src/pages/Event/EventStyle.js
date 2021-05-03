@@ -1,24 +1,38 @@
 import styled from 'styled-components';
 import {
-    colors,
-    breakpoints
+  breakpoints
 } from '../../lib/style/theme';
 
-export const SectionEventsWrapper = styled.section`
-    background-color: ${colors.black};
-    padding: 20px;
+export const EventInfo = styled.div`
+  @media screen and (${breakpoints.tablet}) {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const Figure = styled.figure`
+  width: 100%;
+  height: 230px;
+  margin-bottom: 24px;
+
+  @media screen and (${breakpoints.mobileLarge}) {
+    height: 300px;
+  }
 
   @media screen and (${breakpoints.tablet}) {
-    padding: 30px;
+    height: 230px;
+    width: 300px;
+  }
+
+  @media screen and (${breakpoints.desktop}) {
+    height: 450px;
+    width: 800px;
   }
 `;
 
-export const Text = styled.footer`
-    color: ${colors.lightGrey};
-    font-size: 12px;
-    text-align: center;
-
-    @media screen and (${breakpoints.tablet}) {
-        font-size: 14px;
-  }
+export const Image = styled.img`
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 `;
+
