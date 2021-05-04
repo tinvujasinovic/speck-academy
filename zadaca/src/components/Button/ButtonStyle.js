@@ -5,7 +5,7 @@ import {
 } from '../../lib/style/theme';
 
 export const ButtonWrapper = styled.button`
- display: block;
+    display: block;
     text-decoration: none;
     width: 100%;
     line-height: 40px;
@@ -18,11 +18,11 @@ export const ButtonWrapper = styled.button`
     font-size: 16px;
     font-family: "Montserrat", sans-serif;
     &:hover {
-      cursor: pointer;
-      border-color: ${colors.yellow};
-      background: ${colors.yellow};
+        cursor: pointer;
+        border-color: ${colors.yellow};
+        background: ${colors.yellow};
     }
     &:focus {
-      outline: none;
+        outline: none;
     }
 `;
