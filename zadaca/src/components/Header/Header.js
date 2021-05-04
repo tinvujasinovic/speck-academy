@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import LogoImage from '../../assets/images/logo.png';
 import { 
@@ -9,26 +9,36 @@ import {
     Nav,
     NavItem,
     Hamburger,
-    HamburgerLine 
+    HamburgerLine,
+    HamburgerNav
 } from './HeaderStyle';
 
-
 const Header = () => {
+
+    const [showHamburgerNav, setHamburgerNav] = useState(false);
+
+    const showNavigation = (e) => {
+        e.preventDefault();
+        setHamburgerNav(!showHamburgerNav);
+
+    }
+
     return (
         <HeaderWrapper>
             <Inner>
                 <LogoContainer to="/">
                     <Logo src={LogoImage} alt="FOI logo"/>
                 </LogoContainer>
-                <Hamburger>
+                <Hamburger onClick={showNavigation}>
                     <HamburgerLine/>
                     <HamburgerLine/>
                     <HamburgerLine/>
                 </Hamburger>
-                <Nav>
+                 { !showHamburgerNav ? <Nav>
                     <NavItem exact to="/">Home</NavItem>
                     <NavItem exact to="/events">Events</NavItem>
                 </Nav>
+                : <HamburgerNav/>}
             </Inner>
         </HeaderWrapper>
     );

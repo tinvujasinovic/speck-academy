@@ -7,9 +7,14 @@ export const Grid = styled.div`
     display: grid;
     row-gap: 32px;
 
+    &:last-child {
+            margin-bottom: 16px;
+        }
+
     @media screen and (${breakpoints.mobileLarge}) {
         grid-template-columns: repeat(2, 1fr);
         column-gap: 32px;
+
     }
 
     @media screen and (${breakpoints.desktop}) {

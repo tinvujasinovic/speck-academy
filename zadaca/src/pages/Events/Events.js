@@ -12,8 +12,6 @@ const Events = () => {
 	const [filter, setFilter] = useState(null);
 	const eventsList = AllEvents;
 
-
-
 	useEffect(() => {
 		const timeout = setTimeout(() => {
 			setEvents(eventsList);
@@ -24,7 +22,7 @@ const Events = () => {
 			x.title.toLowerCase().includes(filter)
 		);
 		setEvents(result);
-		
+
 		return () => { clearTimeout(timeout) }
 	}, [eventsList, filter]);
 
@@ -55,7 +53,7 @@ const Events = () => {
 		<>
 			<Section title="Events">
 
-				<SearchBar placeholder="Search events by title..." onValueChange={handleSearch} disabled={disabled} />
+				<SearchBar placeholder="Search events by title..." callback={handleSearch} disabled={disabled} />
 				{!disabled ?
 					<>
 						<Grid columns={4}>

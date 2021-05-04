@@ -108,3 +108,16 @@ export const HamburgerLine = styled.div`
         margin-bottom: 0;
     }
 `;
+
+export const HamburgerNav = styled.div`
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: ${colors.white};
+    top: 80px;
+    z-index: 100;
+
+    @media screen and (${breakpoints.desktop}){
+        display: none;
+    }
+`;
