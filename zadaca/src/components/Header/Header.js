@@ -10,26 +10,24 @@ import {
     NavItem,
     Hamburger,
     HamburgerLine,
-    HamburgerNav
+    HamburgerNav,
+    HamburgerLink
 } from './HeaderStyle';
 
 const Header = () => {
 
     const [showHamburgerNav, setHamburgerNav] = useState(false);
 
-    const showNavigation = (e) => {
-        e.preventDefault();
+    const toggleNavigation = (e) => {
         setHamburgerNav(!showHamburgerNav);
-
     }
-
     return (
         <HeaderWrapper>
             <Inner>
                 <LogoContainer to="/">
                     <Logo src={LogoImage} alt="FOI logo"/>
                 </LogoContainer>
-                <Hamburger onClick={showNavigation}>
+                <Hamburger onClick={toggleNavigation}>
                     <HamburgerLine/>
                     <HamburgerLine/>
                     <HamburgerLine/>
@@ -38,7 +36,10 @@ const Header = () => {
                     <NavItem exact to="/">Home</NavItem>
                     <NavItem exact to="/events">Events</NavItem>
                 </Nav>
-                : <HamburgerNav/>}
+                : <HamburgerNav>
+                    <HamburgerLink onClick={toggleNavigation} exact to="/">Home</HamburgerLink>
+                    <HamburgerLink onClick={toggleNavigation} exact to="/events">Events</HamburgerLink>
+                </HamburgerNav>}
             </Inner>
         </HeaderWrapper>
     );

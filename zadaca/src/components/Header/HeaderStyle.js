@@ -111,13 +111,35 @@ export const HamburgerLine = styled.div`
 
 export const HamburgerNav = styled.div`
     position: absolute;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     background-color: ${colors.white};
     top: 80px;
+    left: 0;
     z-index: 100;
 
     @media screen and (${breakpoints.desktop}){
         display: none;
+    }
+`;
+
+export const HamburgerLink = styled(NavLink)`
+    text-decoration: none;
+    color: ${colors.black};
+    line-height: 25px;
+    font-weigth: 600;
+    font-size: 16px;
+    margin: 15px auto;
+    transition: ${transitionEase};
+    display: block;
+    text-align: center;
+    width: fit-content;
+
+    &.active {
+        color: ${colors.red}
+    }
+    
+    &:hover {
+        color: ${colors.red}
     }
 `;

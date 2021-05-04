@@ -8,17 +8,17 @@ import Event from './pages/Event/Event';
 import { Main } from './lib/style/generalStyles';
 
 function App() {
-    return (
-        <>
-            <Header />
-            <Main>
-                <Route exact path="/" component={Home} />
-                <Route path="/events" component={Events} />
-                <Route path="/event/:id" component={Event} />
-            </Main>
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <Header />
+      <Main>
+        <Route exact path="/" component={Home}/>
+        <Route path="/events" component={Events}/>
+        <Route path="/event/:id" component={Event}/>  
+      </Main>
+      <Footer />
+    </>
+  );
 }
 
 export default App;
