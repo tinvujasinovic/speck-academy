@@ -1,21 +1,24 @@
 import React from 'react';
 import Button from '../Button/Button';
-import { 
-    EventCardWrapper, 
-    Title, 
-    Content, 
+import {
+    EventCardWrapper,
+    Title,
+    Content,
     Row,
     Item,
     ItemTitle,
-    ItemValue } from './EventCardStyle';
+    ItemValue
+} from './EventCardStyle';
 
 const EventCard = ({
+    id,
     title,
     location,
     time,
     availablePlaces,
     company
 }) => {
+
     return (
         <>
             <EventCardWrapper>
@@ -42,7 +45,7 @@ const EventCard = ({
                         </Item>
                     </Row>
                 </Content>
-                <Button text={'Find out more'} />
+                <Button text={'Find out more'} id={id} />
             </EventCardWrapper>
         </>
     );

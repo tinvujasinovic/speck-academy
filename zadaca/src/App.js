@@ -16,7 +16,7 @@ function App() {
       <Main>
         <Route exact path="/" component={Home}/>
         <Route path="/events" component={Events}/>
-        <Route path="/event" component={Event}/>  
+        <Route path="/event/:id" component={Event}/>  
         <Route path="/login" component={Login}/>  
         <Route path="/register" component={Register}/>  
       </Main>

@@ -4,29 +4,29 @@ import {
 } from '../../lib/style/theme';
 
 export const SectionWrapper = styled.section`
-    padding: 60px 15px;
+    padding: 60px 15px 0;
 
-    padding-top: ${props => props.withoutTopPadding == true ? "0px": "" }
+    padding-top: ${props => props.withoutTopPadding === true ? "0px": "" }
     
     @media screen and (${breakpoints.tablet}) {
-        padding: 80px 25px;
+        padding: 80px 25px 40px;
         
-        padding-top: ${props => props.withoutTopPadding == true ? "0px": "" }
+        padding-top: ${props => props.withoutTopPadding === true ? "0px": "" }
     }
 
     @media screen and (${breakpoints.desktop}) {
-        padding: 80px 0;
+        padding: 80px 0 40px;
         max-width: 993px;
         margin: 0 auto;
         
-        padding-top: ${props => props.withoutTopPadding == true ? "0px": "" }
+        padding-top: ${props => props.withoutTopPadding === true ? "0px": "" }
     }
 
     @media screen and (${breakpoints.desktopLarge}) {
         padding: 100px 0;
         max-width: 1280px;
 
-        padding-top: ${props => props.withoutTopPadding == true ? "0px": "" }
+        padding-top: ${props => props.withoutTopPadding === true ? "0px": "" }
     }
 `;
 
@@ -34,7 +34,7 @@ export const Title = styled.h2`
     text-align: center;
     font-size: 20px;
     margin-bottom: 32px;
-        margin-top: 40px;
+    margin-top: 40px;
 
     @media screen and (${breakpoints.mobileLarge}) {
         font-size: 24px;
