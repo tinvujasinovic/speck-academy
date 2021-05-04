@@ -8,8 +8,10 @@ const Button = (
 ) => {
     const history = useHistory();
 
-    const redirect = () => {
-        history.push(`/event/${props.id}`)
+    const redirect = (e) => {
+        e.preventDefault();
+        if(props.id > 0)
+            history.push(`/event/${props.id}`);
     }
 
     return (

@@ -7,19 +7,20 @@ import AllEvents from '../../lib/mock/events';
 
 const Event = () => {
 
-    let {id} = useParams();
-    
-    let event = AllEvents.find(x=>x.id === parseInt(id));
+    let { id } = useParams();
+
+    let event = AllEvents.find(x => x.id === parseInt(id));
 
     return (
         <Section title={event.title}>
-            <EventInfo 
+            <EventInfo
                 location={event.location}
                 time={event.dateTime}
                 availability={event.availability}
                 company={event.company}
                 imageAlt={event.imageAlt}
                 imageUrl={event.imageUrl}
+                description={event.description}
             />
         </Section>
     );

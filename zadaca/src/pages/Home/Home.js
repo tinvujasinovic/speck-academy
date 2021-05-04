@@ -3,33 +3,35 @@ import Hero from '../../components/Hero/Hero';
 import Section from '../../components/Section/Section';
 import Event from '../../components/Event/Event';
 import { Grid } from '../../lib/style/generalStyles';
-import allEvents from '../../lib/mock/events';
+import AllEvents from '../../lib/mock/events';
 import Load from '../../components/Load/Load';
 
 const Home = () => {
     const [events, setEvents] = useState([]);
-
+    let eventsList = AllEvents;
 
     useEffect(() => {
-        let eventsList = [];
-        setTimeout(() => {
-            eventsList = allEvents.map((event, index) => {
-                return event.isFeatured ? <Event
-                    key={index}
-                    id={event.id}
-                    image={event.imageUrl}
-                    imageAlt={event.imageAlt}
-                    title={event.title}
-                    description={event.shortDescription}
-                    buttonText='Find out more'
-                /> : null
-            });
-
-            setEvents(eventsList);
+        const timeout = setTimeout(() => {
+            setEvents(createEvents(eventsList));
         }, 1000);
 
-        return ()=>{};
-    }, []);
+        return ()=>{clearTimeout(timeout)}
+    }, [eventsList]);
+
+    const createEvents = (list) => {
+        return list.map((event, index) => {
+            return event.isFeatured ? <Event
+                key={index}
+                id={event.id}
+                image={event.imageUrl}
+                imageAlt={event.imageAlt}
+                title={event.title}
+                description={event.shortDescription}
+                buttonText='Find out more'
+            /> : null
+        });
+    }
+
     return (
         <main>
             <Hero />
