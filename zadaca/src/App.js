@@ -1,13 +1,14 @@
 import './App.scss';
+import { Route } from 'react-router-dom';
+import { Main } from './lib/style/generalStyles';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import { Route } from 'react-router-dom';
 import Home from './pages/Home/Home';
 import Events from './pages/Events/Events';
 import Event from './pages/Event/Event';
-import { Main } from './lib/style/generalStyles';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
+import Admin from './pages/Admin/Admin';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/event/:id" component={Event}/>  
         <Route path="/login" component={Login}/>  
         <Route path="/register" component={Register}/>  
+        <Route path="/admin" component={Admin}/>  
       </Main>
       <Footer />
     </>

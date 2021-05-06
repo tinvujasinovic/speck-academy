@@ -43,9 +43,11 @@ export const Main = styled.main`
 export const Form = styled.form`
     width: 100%;
     margin: 0 auto;
+        padding: 32px 0;
 
     @media screen and (${breakpoints.tablet}) {
         width: 400px;
+        padding: 32px 0;
     }
 
     @media screen and (${breakpoints.desktop}) {

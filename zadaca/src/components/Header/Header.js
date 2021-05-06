@@ -42,6 +42,9 @@ const Header = () => {
                 : <HamburgerNav>
                     <HamburgerLink onClick={toggleNavigation} exact to="/">Home</HamburgerLink>
                     <HamburgerLink onClick={toggleNavigation} exact to="/events">Events</HamburgerLink>
+                    <HamburgerLink onClick={toggleNavigation} exact to="/register">Register</HamburgerLink>
+                    <HamburgerLink onClick={toggleNavigation} exact to="/login">Login</HamburgerLink>
+                    <HamburgerLink onClick={toggleNavigation} exact to="/admin">Admin</HamburgerLink>
                 </HamburgerNav>}
             </Inner>
         </HeaderWrapper>

@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
 import Section from '../../components/Section/Section';
+import ButtonSubmit from '../../components/ButtonSubmit/ButtonSubmit';
+import Load from '../../components/Load/Load';
 import {
     Form,
     FormRow,
@@ -10,8 +11,7 @@ import {
     InputLabel,
     InputText,
     InputCheckbox,
-    InputError,
-    ButtonSubmit
+    InputError
 } from '../../lib/style/generalStyles';
 
 const Register = () => {
@@ -104,9 +104,9 @@ const Register = () => {
                             </CheckboxWrapper>
 
                         </FormRow>
-                        <button type="submit">submit</button>
+                        <ButtonSubmit text='Register'/>     
                     </Form>
-                    : <p>loader</p>}
+                    : <Load/>}
             </Section>
         </>
     )

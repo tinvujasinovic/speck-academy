@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
-
 import Section from '../../components/Section/Section';
-import {
-    
+import Load from '../../components/Load/Load';
+import ButtonSubmit from '../../components/ButtonSubmit/ButtonSubmit';
+import {    
     Form,
     FormRow,
-    CheckboxWrapper,
     InputLabel,
     InputText,
-    InputCheckbox,
-    InputError,
-    ButtonSubmit
+    InputError
 } from '../../lib/style/generalStyles';
 
 const Login = () => {
@@ -62,11 +59,10 @@ const Login = () => {
                             {formik.touched.password && formik.errors.password
                                 ? <InputError>{formik.errors.password}</InputError>
                                 : null}
-                        </FormRow>   
-                        
-                        <button type="submit">submit</button>                   
+                        </FormRow>                        
+                        <ButtonSubmit text='Login'/>               
                     </Form>
-                    : <p>loader</p>}
+                    : <Load/>}
             </Section>
         </>
     )
