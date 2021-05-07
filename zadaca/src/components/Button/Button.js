@@ -15,7 +15,7 @@ const Button = (
     }
 
     return (
-        <ButtonWrapper type="button" onClick={redirect}>
+        <ButtonWrapper type="button" onClick={props.callback ? props.callback : redirect}>
             {props.text}
         </ButtonWrapper>
     );

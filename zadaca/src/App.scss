@@ -23,11 +23,9 @@ body {
   overflow-x: hidden;
   height: 100%;
 }
-#root {
-  display: flex;
-  height: 100%;
-  flex-direction: column;
-}
 main {
   flex: 1 0 auto;
+}
+table {
+  border-collapse: collapse;
 }

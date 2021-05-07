@@ -13,7 +13,7 @@ export const ButtonWrapper = styled.button`
     border: 1px solid ${colors.red};
     border-radius: 6px;
     background: ${colors.red};
-    color: #fff;
+    color: ${colors.white};
     transition: ${transitionEase};
     font-size: 16px;
     font-family: "Montserrat", sans-serif;

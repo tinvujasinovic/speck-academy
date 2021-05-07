@@ -6,7 +6,7 @@ import {
 } from '../../lib/style/theme';
 
 export const EventCardWrapper = styled.div`
-   border: 1px solid ${colors.lightGrey};
+    border: 1px solid ${colors.lightGrey};
     box-shadow: ${boxShadow};
     transition: ${transitionCubic};
     border-radius: 6px;
