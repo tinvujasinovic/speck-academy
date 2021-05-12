@@ -1,11 +1,23 @@
 import styled from 'styled-components';
-import { ButtonWrapper } from '../Button/ButtonStyle';
 import {
     colors,
-    breakpoints
+    transitionEase
 } from '../../lib/style/theme';
 
-export const ButtonAddWrapper = styled(ButtonWrapper)`
+export const ButtonAddWrapper = styled.button`
+   display: block;
+    text-decoration: none;
+    line-height: 40px;
+    text-align: center;
+    border: 1px solid ${colors.red};
+    border-radius: 6px;
+    transition: ${transitionEase};
+    font-size: 16px;
+    font-family: "Montserrat", sans-serif;
+
+    &:focus {
+        outline: none;
+    }
     border-color: ${colors.darkGrey};
     background: ${colors.white};
     color: ${colors.darkGrey};

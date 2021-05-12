@@ -64,10 +64,23 @@ export const Form = styled.form`
 `;
 
 export const FormRow = styled.div`
-    margin-bottom: 32px;
+    margin-bottom: ${props => props.smallerBottomMargin ? '12px': '32px'};
+
+    @media screen and (${breakpoints.mobileLarge}) {
+        margin-bottom: ${props => props.smallerBottomMargin ? '20px': '32px'};
+    }
 
     &:last-chiled {
         margin-bottom: 0px;
+    }
+`;
+
+export const FormDoubleRow = styled.div`
+
+    @media screen and (${breakpoints.mobileLarge}) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        display: grid;
     }
 `;
 
@@ -140,4 +153,23 @@ export const InputError = styled.p`
     font-size: 14px;
     color: ${colors.red};
     padding-top: 8px;
+`;
+
+export const InputSelect = styled.select`
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    width: 100%;
+    height: 42px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+    font-familiy: 'Montserrat', sans-serif;
+
+    &:focus  {
+        border-color: ${colors.yellow};
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
 `;

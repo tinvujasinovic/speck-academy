@@ -11,6 +11,7 @@ export const colors = {
     black: '#000000',
     darkGrey: '#333333',
     lightGrey: '#d0d0d0',
+    grey: '#f2f2f2',
     green: '#009933',
     blackOverlay: 'rgba(0, 0, 0, 0.7)'
 };
