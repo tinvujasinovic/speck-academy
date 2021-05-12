@@ -108,12 +108,17 @@ const Table = () => {
         setEvents(eventsList);
     }
 
+    const resetModal = () => {
+        setIsModalVisible(false);
+        formik.resetForm();
+    }
+
     return (
         <>
             <Section>
                 <ButtonAdd text='Add event' callback={() => setIsModalVisible(true)}></ButtonAdd>
                 {displayTable()}
-                {<Modal show={isModalVisible} callback={null} onClose={() => setIsModalVisible(false)}>
+                {<Modal show={isModalVisible} callback={null} onClose={resetModal}>
                     <Form onSubmit={formik.handleSubmit}>
                         <FormRow smallerBottomMargin={true}>
                             <InputLabel htmlFor='title'>Title</InputLabel>

@@ -48,8 +48,9 @@ export const Overlay = styled.div`
     justify-content: center;
     padding: 16px 0;      
     height: fit-content;
+
     @media screen and (${breakpoints.mobileLarge}) {
-        height: unset; 
+        height: calc(100vh + 50px); 
     }    
 `;
 
