@@ -50,7 +50,7 @@ const Table = () => {
             eventsList.push(values)
 
             setEvents(eventsList);
-            // resetForm();
+            resetForm();
             setIsModalVisible(false);
         }
     });
