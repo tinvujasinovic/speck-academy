@@ -75,7 +75,7 @@ const Login = () => {
     return (
         <>
             <h1>Register</h1>
-            <Section withoutTopPadding={false}>
+            <Section withoutTopPadding={false} title='Login'>
                 {isRequestFinished && <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>}
                 {!isLoading
                     ?

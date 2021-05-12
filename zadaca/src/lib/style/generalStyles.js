@@ -21,33 +21,37 @@ export const Grid = styled.div`
         grid-template-columns: repeat(3, 1fr);
 
         ${props => props.columns === 3 &&
-            'padding: 0 32px'
-        }
+        'padding: 0 32px'
+    }
     }
     
     @media screen and (${breakpoints.desktopLarge}) {
         ${props => props.columns === 3 &&
-            'padding: 0 84px;'
-        }
+        'padding: 0 84px;'
+    }
 
-        ${props => props.columns === 4 && 
-            'grid-template-columns: repeat(4, 1fr);'
-        }
+        ${props => props.columns === 4 &&
+        'grid-template-columns: repeat(4, 1fr);'
+    }
     }
 `;
 
 export const Main = styled.main`
+    min-height: calc(100vh - 54px);
 
+    @media screen and (${breakpoints.tablet}) {
+        min-height: calc(100vh - 74px);
+    }
 `;
 
 export const Form = styled.form`
     width: 100%;
     margin: 0 auto;
-        padding: 32px 0;
+    padding-bottom: 32px;
 
     @media screen and (${breakpoints.tablet}) {
-        width: 400px;
-        padding: 32px 0;
+        width: 400px;        
+        padding-bottom: 32px;
     }
 
     @media screen and (${breakpoints.desktop}) {
@@ -60,10 +64,23 @@ export const Form = styled.form`
 `;
 
 export const FormRow = styled.div`
-    margin-bottom: 32px;
+    margin-bottom: ${props => props.smallerBottomMargin ? '12px': '32px'};
+
+    @media screen and (${breakpoints.mobileLarge}) {
+        margin-bottom: ${props => props.smallerBottomMargin ? '20px': '32px'};
+    }
 
     &:last-chiled {
         margin-bottom: 0px;
+    }
+`;
+
+export const FormDoubleRow = styled.div`
+
+    @media screen and (${breakpoints.mobileLarge}) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-column-gap: 16px;
+        display: grid;
     }
 `;
 
@@ -138,6 +155,25 @@ export const InputError = styled.p`
     padding-top: 8px;
 `;
 
+export const InputSelect = styled.select`
+    border: 1px solid ${colors.lightGrey};
+    border-radius: 6px;
+    width: 100%;
+    height: 42px;
+    padding: 0 10px;
+    outline: none;
+    font-size: 14px;
+    font-familiy: 'Montserrat', sans-serif;
+
+    &:focus  {
+        border-color: ${colors.yellow};
+    }
+
+    @media screen and (${breakpoints.desktop}) {
+        font-size: 16px;
+    }
+`;
+
 export const SuccessMessage = styled.p`
     margin: 0 auto;
     padding: 15px;
@@ -153,3 +189,4 @@ export const SuccessMessage = styled.p`
         max-width: 400px;
     }
 `;
+

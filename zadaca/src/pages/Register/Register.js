@@ -87,7 +87,7 @@ const Register = () => {
 
     return (
         <>
-            <Section>
+            <Section withoutTopPadding={false} title='Register'>
                 {isRequestFinished && <SuccessMessage isError={isError}>{successMessage}</SuccessMessage>}
                 {!isLoading
                     ?
