@@ -42,7 +42,7 @@ const Login = () => {
     return (
         <>
             <h1>Register</h1>
-            <Section withoutTopPadding={false}>
+            <Section withoutTopPadding={false} title='Login'>
                 {!isLoading
                     ?
                     <Form onSubmit={formik.handleSubmit}>

@@ -58,7 +58,7 @@ const Register = () => {
 
     return (
         <>
-            <Section withoutTopPadding={false}>
+            <Section withoutTopPadding={false} title='Register'>
                 {!isLoading
                     ?
                     <Form onSubmit={formik.handleSubmit}>

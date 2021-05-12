@@ -21,33 +21,37 @@ export const Grid = styled.div`
         grid-template-columns: repeat(3, 1fr);
 
         ${props => props.columns === 3 &&
-            'padding: 0 32px'
-        }
+        'padding: 0 32px'
+    }
     }
     
     @media screen and (${breakpoints.desktopLarge}) {
         ${props => props.columns === 3 &&
-            'padding: 0 84px;'
-        }
+        'padding: 0 84px;'
+    }
 
-        ${props => props.columns === 4 && 
-            'grid-template-columns: repeat(4, 1fr);'
-        }
+        ${props => props.columns === 4 &&
+        'grid-template-columns: repeat(4, 1fr);'
+    }
     }
 `;
 
 export const Main = styled.main`
+    min-height: calc(100vh - 54px);
 
+    @media screen and (${breakpoints.tablet}) {
+        min-height: calc(100vh - 74px);
+    }
 `;
 
 export const Form = styled.form`
     width: 100%;
     margin: 0 auto;
-        padding: 32px 0;
+    padding-bottom: 32px;
 
     @media screen and (${breakpoints.tablet}) {
-        width: 400px;
-        padding: 32px 0;
+        width: 400px;        
+        padding-bottom: 32px;
     }
 
     @media screen and (${breakpoints.desktop}) {

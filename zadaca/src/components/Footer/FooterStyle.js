@@ -5,7 +5,7 @@ import {
 } from '../../lib/style/theme';
 
 export const FooterWrapper = styled.footer`
-    background-color: ${colors.black};
+    background-color: ${colors.darkGrey};
     padding: 20px;
 
   @media screen and (${breakpoints.tablet}) {
@@ -17,6 +17,7 @@ export const Text = styled.footer`
     color: ${colors.lightGrey};
     font-size: 12px;
     text-align: center;
+    height: 14px;
 
     @media screen and (${breakpoints.tablet}) {
         font-size: 14px;
