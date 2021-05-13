@@ -92,6 +92,34 @@ export const NavItem = styled(NavLink)`
     }
 `;
 
+
+export const NavItemDummy = styled.p`
+    
+    &:hover {
+        color: ${colors.red}
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @media screen and (${breakpoints.desktop}){
+        display: inline-block;
+        text-decoration: none;
+        color: ${colors.black};
+        line-height: 50px;
+        font-weigth: 600;
+        font-size: 16px;
+        margin: 15px 0;
+        margin-right: 60px;
+        transition: ${transitionEase}
+    }
+
+    @media screen and (${breakpoints.desktopLarge}){
+        font-size: 18px;
+    }   
+`;
+
 export const Hamburger = styled.div`
     width: 25px;
     @media screen and (${breakpoints.desktop}) {
@@ -139,6 +167,23 @@ export const HamburgerLink = styled(NavLink)`
         color: ${colors.red}
     }
     
+    &:hover {
+        color: ${colors.red}
+    }
+`;
+
+export const HamburgerLinkDummy = styled.p`
+    text-decoration: none;
+    color: ${colors.black};
+    line-height: 25px;
+    font-weigth: 600;
+    font-size: 16px;
+    margin: 15px auto;
+    transition: ${transitionEase};
+    display: block;
+    text-align: center;
+    width: fit-content;
+
     &:hover {
         color: ${colors.red}
     }

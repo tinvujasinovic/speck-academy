@@ -15,7 +15,8 @@ import {
 import { getAllUsers } from '../../api/user';
 import { loginUser } from '../../api/login';
 
-const Login = () => {
+const Login = (props) => {
+
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
@@ -42,23 +43,23 @@ const Login = () => {
 
             try {
                 const response = await loginUser(values);
-                console.log(response)
+                
                 const users = await getAllUsers(response.token);
-                console.log(values.email)
+                
                 const isAdmin = users.find(x => x.email === values.email).isAdmin;
-                console.log(isAdmin)
+                
                 localStorage.setItem('authToken', response.token);
                 localStorage.setItem('isAdmin', isAdmin);
 
                 resetForm();
-                setSuccessMessage("You are now logged in!");
-                //kod logina ADMINA odmah se promjeni header - doda se Admin link - javi se Logout link  - makne se login i register
-                //kod logout dodaju se login i register, makne se admin
-                //student (non admin) ne smije pristupiti adminu
+                setSuccessMessage("You are now logged in!");          
 
                 setTimeout(() => {
                     setIsRequestFinished(false);
                 }, 4000);
+
+                props.setIsAdmin(isAdmin);   
+                props.setIsLoggedIn(true);   
             }
             catch {
                 setIsError(true)
@@ -70,7 +71,6 @@ const Login = () => {
             }
         }
     })
-
 
     return (
         <>

@@ -1,5 +1,5 @@
 import './App.scss';
-import { Route, useLocation } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import { Main } from './lib/style/generalStyles';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
@@ -10,28 +10,28 @@ import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Admin from './pages/Admin/Admin';
 import { useEffect, useState } from 'react';
+import { render } from '@testing-library/react';
 
 function App() {
 
-  useEffect(() => {
-    const isAdmin = localStorage.getItem('isAdmin');
-    const token = localStorage.getItem('authToken');
-    console.log(isAdmin)
-    console.log(token)
-  }, []);
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem('isAdmin'));
+  const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('authToken'));
 
-  const { pathname } = useLocation();
-  const [isAdmin, setIsAdmin] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const updateIsLoggedIn = (value) => {
+    setIsLoggedIn(value);
+  }
 
+  const updateIsAdmin = (value) => {
+    setIsAdmin(value);
+  }
   return (
     <>
-      <Header />
+      <Header isAdmin={isAdmin} isLoggedIn={isLoggedIn} setIsAdmin={updateIsAdmin} setIsLoggedIn={updateIsLoggedIn}  />
       <Main>
         <Route exact path="/" component={Home} />
         <Route path="/events" component={Events} />
         <Route path="/event/:id" component={Event} />
-        <Route path="/login" component={Login} />
+        <Route path="/login" render={props => <Login {...props} setIsAdmin={updateIsAdmin} setIsLoggedIn={updateIsLoggedIn} />} />
         <Route path="/register" component={Register} />
         <Route path="/admin" component={Admin} />
       </Main>
