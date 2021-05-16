@@ -3,12 +3,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop'
+import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+import { AuthProvider } from './context/AuthContext';
 
 ReactDOM.render(
-  <BrowserRouter>
+
+
+<BrowserRouter>
     <ScrollToTop />
-    <App />
+    <AuthProvider>
+      <App />
+    </AuthProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );
