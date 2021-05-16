@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import Section from '../../components/Section/Section';
@@ -14,13 +14,15 @@ import {
 } from '../../lib/style/generalStyles';
 import { getAllUsers } from '../../api/user';
 import { loginUser } from '../../api/login';
+import { AuthContext } from '../../context/AuthContext';
 
-const Login = (props) => {
+const Login = () => {
 
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
     const [successMessage, setSuccessMessage] = useState('');
     const [isRequestFinished, setIsRequestFinished] = useState(false);
+    const { setIsAdmin, setIsLoggedIn } = useContext(AuthContext);
 
     const formik = useFormik({
         initialValues: {
@@ -42,21 +44,21 @@ const Login = (props) => {
             setIsRequestFinished(false)
 
             try {
-                const response = await loginUser(values);                
-                const users = await getAllUsers(response.token);                
+                const response = await loginUser(values);
+                const users = await getAllUsers(response.token);
                 const isAdmin = users.find(x => x.email === values.email).isAdmin;
-                
-                props.setIsAdmin(isAdmin);   
-                props.setIsLoggedIn(true);   
-                
+
+                setIsAdmin(isAdmin);
+                setIsLoggedIn(true);
+
                 localStorage.setItem('authToken', response.token);
-                localStorage.setItem('isAdmin', isAdmin);      
+                localStorage.setItem('isAdmin', isAdmin);
 
                 setTimeout(() => {
                     setIsRequestFinished(false);
-                }, 4000);                
+                }, 4000);
 
-                setSuccessMessage("You are now logged in!");    
+                setSuccessMessage("You are now logged in!");
                 resetForm();
             }
             catch {

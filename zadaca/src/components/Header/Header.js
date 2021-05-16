@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import LogoImage from '../../assets/images/logo.png';
+import { AuthContext } from '../../context/AuthContext';
 import {
     HeaderWrapper,
     Inner,
@@ -15,9 +16,10 @@ import {
     NavItemDummy
 } from './HeaderStyle';
 
-const Header = (props) => {
+const Header = () => {
 
     const [showHamburgerNav, setHamburgerNav] = useState(false);
+    const { isAdmin, isLoggedIn, setIsLoggedIn, setIsAdmin } = useContext(AuthContext);
 
     const toggleNavigation = (e) => {
         setHamburgerNav(!showHamburgerNav);
@@ -26,8 +28,8 @@ const Header = (props) => {
     const logout = () => {
         localStorage.removeItem('isAdmin');
         localStorage.removeItem('authToken');
-        props.setIsLoggedIn(false);
-        props.setIsAdmin(false);
+        setIsLoggedIn(false);
+        setIsAdmin(false);
     }
 
     const checkTrue = (value) => {
@@ -51,19 +53,19 @@ const Header = (props) => {
                 {!showHamburgerNav ? <Nav>
                     <NavItem exact to="/">Home</NavItem>
                     <NavItem exact to="/events">Events</NavItem>
-                    {!props.isLoggedIn && <NavItem exact to="/register">Register</NavItem>}
-                    {!props.isLoggedIn && <NavItem exact to="/login">Login</NavItem>}
-                    {props.isLoggedIn && checkTrue(props.isAdmin) && <NavItem exact to="/admin">Admin</NavItem>}
-                    {props.isLoggedIn && <NavItemDummy onClick={logout}>Logout</NavItemDummy>}
+                    {!isLoggedIn && <NavItem exact to="/register">Register</NavItem>}
+                    {!isLoggedIn && <NavItem exact to="/login">Login</NavItem>}
+                    {isLoggedIn && checkTrue(isAdmin) && <NavItem exact to="/admin">Admin</NavItem>}
+                    {isLoggedIn && <NavItemDummy onClick={logout}>Logout</NavItemDummy>}
 
                 </Nav>
                     : <HamburgerNav>
                         <HamburgerLink onClick={toggleNavigation} exact to="/">Home</HamburgerLink>
                         <HamburgerLink onClick={toggleNavigation} exact to="/events">Events</HamburgerLink>
-                        {!props.isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/register">Register</HamburgerLink>}
-                        {!props.isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/login">Login</HamburgerLink>}
-                        {props.isLoggedIn && checkTrue(props.isAdmin) && <HamburgerLink onClick={toggleNavigation} exact to="/admin">Admin</HamburgerLink>}
-                        {props.isLoggedIn && <HamburgerLinkDummy onClick={() => { logout(); toggleNavigation(); }}>Logout</HamburgerLinkDummy>}
+                        {!isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/register">Register</HamburgerLink>}
+                        {!isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/login">Login</HamburgerLink>}
+                        {isLoggedIn && checkTrue(isAdmin) && <HamburgerLink onClick={toggleNavigation} exact to="/admin">Admin</HamburgerLink>}
+                        {isLoggedIn && <HamburgerLinkDummy onClick={() => { logout(); toggleNavigation(); }}>Logout</HamburgerLinkDummy>}
                     </HamburgerNav>}
             </Inner>
         </HeaderWrapper>
