@@ -95,6 +95,7 @@ export const NavItem = styled(NavLink)`
 
 export const NavItemDummy = styled.p`
     
+    cursor: pointer;
     &:hover {
         color: ${colors.red}
     }
@@ -183,6 +184,7 @@ export const HamburgerLinkDummy = styled.p`
     display: block;
     text-align: center;
     width: fit-content;
+    cursor: pointer;
 
     &:hover {
         color: ${colors.red}

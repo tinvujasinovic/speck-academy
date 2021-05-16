@@ -10,11 +10,11 @@ export const HeroWrapper = styled.section`
     height: 400px;
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: fixed;
     margin-top: 80px;
 
     @media screen and (${breakpoints.desktopLarge}) {
         height: 500px;
+        background-attachment: fixed;
     }
 
     

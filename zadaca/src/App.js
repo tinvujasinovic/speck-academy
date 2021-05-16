@@ -9,8 +9,8 @@ import Event from './pages/Event/Event';
 import Login from './pages/Login/Login';
 import Register from './pages/Register/Register';
 import Admin from './pages/Admin/Admin';
-import { useEffect, useState } from 'react';
-import { render } from '@testing-library/react';
+import { useState } from 'react';
+import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute';
 
 function App() {
 
@@ -33,7 +33,7 @@ function App() {
         <Route path="/event/:id" component={Event} />
         <Route path="/login" render={props => <Login {...props} setIsAdmin={updateIsAdmin} setIsLoggedIn={updateIsLoggedIn} />} />
         <Route path="/register" component={Register} />
-        <Route path="/admin" component={Admin} />
+        <ProtectedRoute path="/admin" component={Admin} isAdmin={isAdmin}/>
       </Main>
       <Footer />
     </>

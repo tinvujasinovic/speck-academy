@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useLocation, useHistory } from 'react-router-dom';
 import LogoImage from '../../assets/images/logo.png';
 import {
     HeaderWrapper,
@@ -18,9 +17,6 @@ import {
 
 const Header = (props) => {
 
-    const { pathname } = useLocation();
-    const history = useHistory();
-
     const [showHamburgerNav, setHamburgerNav] = useState(false);
 
     const toggleNavigation = (e) => {
@@ -32,10 +28,13 @@ const Header = (props) => {
         localStorage.removeItem('authToken');
         props.setIsLoggedIn(false);
         props.setIsAdmin(false);
+    }
 
-        if (pathname === '/admin') {
-            history.push(`/`);
-        }
+    const checkTrue = (value) => {
+        if (value === "true" || value === true)
+            return true;
+
+        return false;
     }
 
     return (
@@ -54,7 +53,7 @@ const Header = (props) => {
                     <NavItem exact to="/events">Events</NavItem>
                     {!props.isLoggedIn && <NavItem exact to="/register">Register</NavItem>}
                     {!props.isLoggedIn && <NavItem exact to="/login">Login</NavItem>}
-                    {props.isLoggedIn && props.isAdmin && <NavItem exact to="/admin">Admin</NavItem>}
+                    {props.isLoggedIn && checkTrue(props.isAdmin) && <NavItem exact to="/admin">Admin</NavItem>}
                     {props.isLoggedIn && <NavItemDummy onClick={logout}>Logout</NavItemDummy>}
 
                 </Nav>
@@ -63,7 +62,7 @@ const Header = (props) => {
                         <HamburgerLink onClick={toggleNavigation} exact to="/events">Events</HamburgerLink>
                         {!props.isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/register">Register</HamburgerLink>}
                         {!props.isLoggedIn && <HamburgerLink onClick={toggleNavigation} exact to="/login">Login</HamburgerLink>}
-                        {props.isLoggedIn && props.isAdmin && <HamburgerLink onClick={toggleNavigation} exact to="/admin">Admin</HamburgerLink>}
+                        {props.isLoggedIn && checkTrue(props.isAdmin) && <HamburgerLink onClick={toggleNavigation} exact to="/admin">Admin</HamburgerLink>}
                         {props.isLoggedIn && <HamburgerLinkDummy onClick={() => { logout(); toggleNavigation(); }}>Logout</HamburgerLinkDummy>}
                     </HamburgerNav>}
             </Inner>

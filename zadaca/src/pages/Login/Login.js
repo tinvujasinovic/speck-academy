@@ -42,24 +42,22 @@ const Login = (props) => {
             setIsRequestFinished(false)
 
             try {
-                const response = await loginUser(values);
-                
-                const users = await getAllUsers(response.token);
-                
+                const response = await loginUser(values);                
+                const users = await getAllUsers(response.token);                
                 const isAdmin = users.find(x => x.email === values.email).isAdmin;
                 
+                props.setIsAdmin(isAdmin);   
+                props.setIsLoggedIn(true);   
+                
                 localStorage.setItem('authToken', response.token);
-                localStorage.setItem('isAdmin', isAdmin);
-
-                resetForm();
-                setSuccessMessage("You are now logged in!");          
+                localStorage.setItem('isAdmin', isAdmin);      
 
                 setTimeout(() => {
                     setIsRequestFinished(false);
-                }, 4000);
+                }, 4000);                
 
-                props.setIsAdmin(isAdmin);   
-                props.setIsLoggedIn(true);   
+                setSuccessMessage("You are now logged in!");    
+                resetForm();
             }
             catch {
                 setIsError(true)
