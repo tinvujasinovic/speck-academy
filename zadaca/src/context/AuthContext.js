@@ -8,7 +8,7 @@ const AuthProvider = (props) => {
 
     return (
         <AuthContext.Provider value={{ isAdmin, setIsAdmin, isLoggedIn, setIsLoggedIn }}>
-            {props.childern}
+            {props.children}
         </AuthContext.Provider>
 
     )
